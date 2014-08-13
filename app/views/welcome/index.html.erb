@@ -1,8 +1,14 @@
 <h1>Welcome to Cookies app</h1>
 
+<% if flash[:info] %>
+<h2>
+  <%= flash[:info] %>
+</h2>
+<% end %>
+
 <p>How many cookies do you want to make?</p>
 
-<form action="/cookies" method="POST">
+<%= form_tag(cookies_path , :method => "POST") do %>
 
   <select name="num_cookies">
     <option value="1">1</option>
@@ -14,4 +20,4 @@
 
   <button id="make">Make Cookies!</button>
 
-</form>
+<% end %>
