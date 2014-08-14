@@ -20,7 +20,7 @@ class CookiesController < ApplicationController
       message = "An error happened!"
       respond_to do |format|
         format.html do
-          flash[:info] = message
+          flash[:error] = message
           redirect_to root_path
         end
         format.json do
